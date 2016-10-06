@@ -57,12 +57,28 @@ class BST
 			inOrder(sr->right);
 		}
 	}
+	
+	void remove(BSTNode* sr)
+	{
+		if(sr!=NULL)
+		{
+			remove(sr->left);
+			remove(sr->right);
+			delete sr;
+		}
+	}
 	public:
 	
 	// Constructor	
 	BST()
 	{
 		root = NULL;
+	}
+	
+	// Destructor
+	~BST()
+	{
+		remove(root);
 	}
 	
 	void insert(int data)
@@ -73,6 +89,7 @@ class BST
 	void inOrder()
 	{
 		inOrder(root);
+		cout << endl;
 	}
 };
 
@@ -90,6 +107,14 @@ int main()
 	
 	bstObj.inOrder();
 	
+	BST* p = new BST();
+	p->insert(100);
+	p->insert(20);
+	p->insert(50);
+	p->insert(200);
+	p->inOrder();
+	delete p;
+		
 	return 0;
 }
 
