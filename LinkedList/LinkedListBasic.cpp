@@ -10,8 +10,15 @@ int main()
 	// insert data
 	list.insert(10);
 	list.insert(20);
+	list.insert(11);
 	list.insert(30);
 	list.insert(40);
+	
+	// print
+	list.display();
+	
+	// reverse	
+	list.reverse();
 	
 	// print
 	list.display();

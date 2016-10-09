@@ -57,6 +57,23 @@ class LinkedList
 		}
 	}
 	
+	// Reverses a linked list
+	void reverse()
+	{
+		node* curr =  head;
+		node* prev = NULL;
+		node* next;
+		
+		while(curr!=NULL)
+		{
+			next = curr->link;
+			curr->link = prev;
+			prev = curr;
+			curr = next;
+		}
+		head = prev;
+	}
+		
 	// Print list elements
 	void display()
 	{
