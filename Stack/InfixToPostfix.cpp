@@ -4,7 +4,7 @@ using namespace std;
 
 // Algorithm
 // STEP1: If scanned character is operand, output it
-// STEP2: IF scanner charater is operator and it's precedence is greater than top() element of stack, PUSH it
+// STEP2: IF scanner charater is operator and it's priority is greater than top() element of stack (and also empty stack), PUSH it
         //ELSE pop until less than or equal to operand is surfaced, print pop() elements and then finally, push the current
 // STEP3: If "(", push it
 // STEP4: If ")" pop until "("
