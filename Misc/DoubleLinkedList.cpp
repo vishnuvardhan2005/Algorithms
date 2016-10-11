@@ -56,23 +56,21 @@ class DLinkedList
 	
 	void reverse()
 	{
-		node* sr = root;
-		node* temp;
-		node* sr1;
-		while(sr!=NULL)
+		node* currNode = root;
+		node* nextNode;
+		
+		while(currNode!=NULL)
 		{
-			sr1 = sr->next;
+			nextNode = currNode->next;
 			
 			// swap next and prev
-			temp = sr->prev;
-			sr->prev = sr->next;
-			sr->next = temp;
+			swap(currNode->prev,currNode->next);
 			
 			// This is to make last node as root;
-			root = sr;
+			root = currNode;
 			
 			// traverse to next node
-			sr = sr1;
+			currNode = nextNode;
 		}
 	}
 };
